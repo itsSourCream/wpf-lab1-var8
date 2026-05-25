@@ -1,0 +1,36 @@
+<Window x:Class="task2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Фигуры" Height="500" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Выберите фигуру:" Width="150" Height="25"/>
+        <ComboBox x:Name="figuraBox" Grid.Row="0" Grid.Column="1" Width="180" Height="25" SelectionChanged="figuraBox_SelectionChanged">
+            <ComboBoxItem Content="Ромб"/>
+            <ComboBoxItem Content="Прямоугольник"/>
+            <ComboBoxItem Content="Эллипс"/>
+        </ComboBox>
+
+        <Label x:Name="label1" Grid.Row="1" Grid.Column="0" Content="параметр 1:" Width="150" Height="25"/>
+        <TextBox x:Name="param1Box" Grid.Row="1" Grid.Column="1" Width="180" Height="25"/>
+
+        <Label x:Name="label2" Grid.Row="2" Grid.Column="0" Content="параметр 2:" Width="150" Height="25"/>
+        <TextBox x:Name="param2Box" Grid.Row="2" Grid.Column="1" Width="180" Height="25"/>
+
+        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Content="Посчитать" Click="poschitat_Click" Width="200" Height="30"/>
+
+        <TextBox x:Name="resultBox" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Width="440" Height="220" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
+    </Grid>
+</Window>
